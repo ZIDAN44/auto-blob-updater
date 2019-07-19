@@ -51,8 +51,8 @@ extract() {
 build_conf() {
     mkdir repo
     cd repo
-    git config --global user.email "sound0020@gmail.com"
-    git config --global user.name "Dyneteve"
+    git config --global user.email "tuhinsultana075@gmail.com"
+    git config --global user.name "ZIDAN44"
 }
 
 init_repo() {
@@ -65,9 +65,9 @@ init_repo() {
 
 dt() {
     echo "Cloning device tree......."
-    git clone https://github.com/PixelExperience-Devices/device_xiaomi_violet -b pie device/xiaomi/violet > /dev/null 2>&1
-    git clone https://github.com/PixelExperience-Devices/vendor_xiaomi_violet -b pie vendor/xiaomi/violet > /dev/null 2>&1
-    cd device/xiaomi/violet
+    git clone https://github.com/PixelExperience-Devices/device_xiaomi_sakura -b pie device/xiaomi/sakura > /dev/null 2>&1
+    git clone https://github.com/PixelExperience-Devices/vendor_xiaomi_sakura -b pie vendor/xiaomi/sakura > /dev/null 2>&1
+    cd device/xiaomi/sakura
 }
 
 gen_blob() {
@@ -76,13 +76,13 @@ gen_blob() {
 }
 
 push_vendor() {
-    cd ~/repo/vendor/xiaomi/violet
+    cd ~/repo/vendor/xiaomi/sakura
     git remote rm origin
-    git remote add origin https://Dyneteve:$(cat /tmp/GH_TOKEN)@github.com/PixelExperience-Devices/vendor_xiaomi_violet.git
+    git remote add origin https://ZIDAN44:$(cat /tmp/GH_TOKEN)@github.com/PixelExperience-Devices/vendor_xiaomi_sakura.git
     git add .
-    git commit -m "violet: Re-gen blobs from MIUI $(cat /tmp/version)" --signoff
-    git checkout -B violet-beta
-    git push origin violet-beta -f
+    git commit -m "sakura: Re-gen blobs from MIUI $(cat /tmp/version)" --signoff
+    git checkout -B sakura-beta
+    git push origin sakura-beta -f
     echo "Job Successful!"
 }
 
