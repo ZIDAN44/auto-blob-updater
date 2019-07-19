@@ -57,7 +57,7 @@ build_conf() {
 
 init_repo() {
     echo "Repo initialised......."
-    repo init -u https://github.com/PixelExperience/manifest -b pie --depth=1 > /dev/null 2>&1
+    repo init -u https://github.com/PixelExperience/manifest -b pie > /dev/null 2>&1
     echo "Repo Syncing started......"
     repo sync -j$(nproc) --no-tags --no-clone-bundle -c > /dev/null 2>&1
     echo -e "\e[32mRepo Synced....."
